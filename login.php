@@ -12,6 +12,6 @@
   </tr>
   <tr>
     <td colspan="2" >
-      <input type="submit" name="" value="Login" id="login">
+      <input type="submit" name="login" value="Login" id="login">
     </td>
   </tr>

@@ -3,13 +3,17 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 	class Beans{ 
 		private $table = "beans";
-		public function select_data($con){
-		    $user_id = $_SESSION['id'];
-		    $text = "SELECT FROM $this->table ";
+		//untuk view
+		public function view($con){
+		    $text = "SELECT * FROM $this->table ";
 		    $query = mysqli_query($con, $text);
-		    $result =  mysqli_insert_id($con);
-		    printf("Error: %s\n", mysqli_error($con));
-
+		    if(mysqli_num_rows($query) >= 1){
+		        $result = array();
+		        while($row = mysqli_fetch_assoc($query)){
+		            $result[] = $row;
+		        }
+		    }
+		    //$result = $text;
 		    return $result;
 		}
 	}
