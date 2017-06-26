@@ -1,0 +1,11 @@
+#head-table>td{
+	background-color: #610200;
+	color: #fff;
+}
+#login{
+	float: right;
+	margin-right: 397px;
+}
+#table-header > td{
+	text-align: center;
+}
