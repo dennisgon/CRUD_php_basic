@@ -1,8 +1,9 @@
 <?php 
-require_once("model/Connection.php");
+session_start();
+require_once("../model/Connection.php");
 $obj_connect = new Connection();
 	
-require_once("model/Logins.php");
+require_once("../model/Logins.php");
 $obj_logins = new Logins();
 
 
@@ -18,6 +19,15 @@ $obj_logins = new Logins();
 
     }else if(isset($_GET['action'])){ 
     	if($_GET['action'] == "login"){
+			$con = $obj_connect->up();
+			$username = mysqli_real_escape_string($con, $_POST['username']);
+			$password = mysqli_real_escape_string($con, $_POST['password']);
+			if ($obj_logins->login($username, $password, $con) == 1) {
+				echo "berhasil";
+			}else{
+				echo "gagal";
+			}
+	    	$obj_connect->down();
     	}
     }
 ?>
