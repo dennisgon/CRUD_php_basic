@@ -4,6 +4,7 @@
   include 'navigation.php';
   include 'controller/beancontroller.php';
 ?>
+  <table width="800">
   <tr id="table-header">
     <td colspan="2">Bean</td>
     <td colspan="2">Description</td>
@@ -20,7 +21,7 @@
 
   </tr>
   <?php } ?>
-  
+  </table>
 <?php
   include 'footer.php';
 ?>
