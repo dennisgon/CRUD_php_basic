@@ -1,4 +1,6 @@
 <?php 
+session_start() ;
+
 require_once("../model/Connection.php");
 $obj_connect = new Connection();
 	
@@ -25,10 +27,14 @@ $obj_logins = new Logins();
 				echo "berhasil";
 				$_SESSION["username"] = $username;
 				header('Location: ../index.php');
+				// echo $_SESSION['username'];
 			}else{
 				header('Location: ../login.php');
 			}
 	    	$obj_connect->down();
+    	}else if ($_GET['action'] == "logout") {
+    		session_destroy();
+    		header('Location: ../login.php');
     	}
     }
 ?>

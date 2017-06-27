@@ -1,3 +1,4 @@
+<table width="800" border="0"r>
   <tr>
     <td colspan="6"><div align="center">
 		<span id="date"></span>

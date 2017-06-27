@@ -1,24 +1,21 @@
 <?php
-  $title = "utama";
+  $title = "home";
   require  'header.php';
   include 'navigation.php';
-  include 'controller/beancontroller.php';
+  include 'controller/homecontroller.php';
 ?>
-  <tr id="table-header">
-    <td colspan="2">Bean</td>
-    <td colspan="2">Description</td>
-    <td colspan="2">Price/unit</td>
-  </tr>
   <!-- panggil view -->
   <?php 
     foreach ($datas as $data ) {
    ?>
-  <tr>
-    <td colspan="2"><?= $data['Bean_Name']?></td>
-    <td colspan="2"><?= $data['Bean_Description']?></td>
-    <td colspan="2"><?= $data['Price_Per_Unit']?></td>
-
-  </tr>
+    <div id="isi_home">
+    <b>Bean of the day</b>
+    <p><?= $data['Bean_Name']?></p>
+    <b>Sale Price</b>
+    <p><?= $data['Sale_Price']?></p>
+    <b>Description</b>
+    <p><?= $data['Bean_Description']?></p>
+    </div>
   <?php } ?>
   
 <?php
