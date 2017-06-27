@@ -1,6 +1,6 @@
 <?php
-
-  include 'header.php';
+  $title = "utama";
+  require  'header.php';
   include 'navigation.php';
   include 'controller/beancontroller.php';
 ?>

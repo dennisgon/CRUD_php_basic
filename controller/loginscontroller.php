@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once("../model/Connection.php");
 $obj_connect = new Connection();
 	
@@ -24,8 +23,10 @@ $obj_logins = new Logins();
 			$password = mysqli_real_escape_string($con, $_POST['password']);
 			if ($obj_logins->login($username, $password, $con) == 1) {
 				echo "berhasil";
+				$_SESSION["username"] = $username;
+				header('Location: ../index.php');
 			}else{
-				echo "gagal";
+				header('Location: ../login.php');
 			}
 	    	$obj_connect->down();
     	}

@@ -1,5 +1,6 @@
 <?php
-  include 'header.php';
+  $title = "login";
+  require  'header.php';
 ?>
   <form  method="POST" action="controller/loginscontroller.php?action=login">
   <tr>
