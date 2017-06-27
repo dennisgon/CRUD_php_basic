@@ -12,3 +12,7 @@
 #isi_home{
 	width: 800px;
 }
+#head-table>td>div>a{
+  text-decoration: none !important;
+  color: white !important;
+}
