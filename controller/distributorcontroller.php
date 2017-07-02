@@ -34,9 +34,6 @@ ini_set('display_errors', 1);
 			$retval = mysqli_query($con,$query);
 			header('Location: ../ditributorview.php');
 			$obj_connect->down();
-		}elseif ($_GET['action'] = "update") {
-			# code...
-
 		}elseif ($_GET['action'] = "edit") {
 			# code...
 			require "../model/Connection.php";
@@ -49,17 +46,14 @@ ini_set('display_errors', 1);
 			$name = $_POST['name'];
 			$city = $_POST['city'];
 			$region = $_POST['region'];
-			$country = $_POST['contry'];
+			$country = $_POST['country'];
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
 
 			$con = $obj_connect->up();
-			$query = "UPDATE distributor SET Distributor_Name='$name',City='$city',State_Region='$region',Country_ID='$country',Phone='$phone', Email= '$email' WHERE Distributor_ID = ";
+			$query = "UPDATE distributor SET Distributor_Name='$name',City='$city',State_Region='$region',Country_ID='$country',Phone='$phone', Email= '$email' WHERE Distributor_ID = '$id'";
 			$retval = mysqli_query($con,$query);
-			echo 'Error: ', $mysqli->error;
-			while ($row = mysqli_fetch_assoc($retval)) {
-				$results[] = $row;
-			}
+			echo $query;
 			$obj_connect->down();
 		}
 	}

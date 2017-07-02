@@ -2,8 +2,6 @@
   $title = "add distributor";
   require  'header.php';
   include 'navigation.php';
-  $_GET['action']="update";
-  require 'controller/distributorcontroller.php';
   require 'controller/countrycontroller.php';
   $obj_connect = new Connection();
 
@@ -17,7 +15,7 @@
   $obj_connect->down();
 ?>
 <form method="POST" action="controller/distributorcontroller.php?action=edit">
-  <input type="hidden" name="id" value="<?php $_GET['id']; ?>">
+  <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
   <?php foreach ($results as $result) {
   ?> 
   <table width="800">
