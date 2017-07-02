@@ -53,8 +53,9 @@ ini_set('display_errors', 1);
 			$con = $obj_connect->up();
 			$query = "UPDATE distributor SET Distributor_Name='$name',City='$city',State_Region='$region',Country_ID='$country',Phone='$phone', Email= '$email' WHERE Distributor_ID = '$id'";
 			$retval = mysqli_query($con,$query);
-			echo $query;
+			
 			$obj_connect->down();
+			header('Location: ../ditributorview.php');
 		}
 	}
 ?>
