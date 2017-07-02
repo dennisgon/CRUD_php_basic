@@ -16,5 +16,12 @@ error_reporting(E_ALL);
 		    //$result = $text;
 		    return $result;
 		}
+		// public function view($con, $id)
+		// {
+		// 	# code...
+		// 	// $text = "SELECT Country_Name from $this->table WHERE id = $id";
+		// 	// $query = mysqli_query($con, $text);
+		// 	// return  
+		// }
 	}
 ?>

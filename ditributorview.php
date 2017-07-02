@@ -18,7 +18,7 @@
   <tr>
     <td colspan="2"><?= $data['Distributor_Name']?></td>
     <td colspan="2"><?= $data['City']?></td>
-    <td colspan="2"><a href="distributoredit.php?id=<?= $data['Distributor_ID']?>">Edit</a></td>
+    <td colspan="2"><a href="editdistributor.php?id=<?= $data['Distributor_ID']?>">Edit</a></td>
   </tr>
   <?php } ?>
   </table>
